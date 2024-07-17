@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/book_details.css' %}">
+
+<div class="book-card">
+    <img src="https://th.bing.com/th/id/OIP.Jqmt0ksuGk5qn65JUDJb_wHaHR?w=167&h=180&c=7&r=0&o=5&pid=1.7" alt="Book Image" class="book-image">
+    <h3 class="book-title">{{ book.title }}</h3>
+    <div class="book-content">
+        <p><strong>Author:</strong> {{ book.author.username }}</p>
+        <p><strong>Description:</strong> {{ book.description }}</p>
+        <p><strong>Rating:</strong> {{ book.rating }}</p>
+        <p><strong>Publish Date:</strong> {{ book.publish_date|date:"F d, Y" }}</p>
+    </div>
+</div>
+
+{% endblock content %}

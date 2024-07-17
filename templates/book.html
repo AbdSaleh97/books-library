@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/book.css' %}">
+<h1>
+    Welcome to the Books page
+</h1>
+
+<div class="book-container">
+    {% for book in Books %}
+    <div class="book-card">
+        <a href="{% url 'book_details' book.pk %}">
+        <img src="https://th.bing.com/th/id/OIP.Jqmt0ksuGk5qn65JUDJb_wHaHR?w=167&h=180&c=7&r=0&o=5&pid=1.7" alt="Book Image" class="book-image">
+        <h2 class="book-title">{{ book.title }}</h2>
+        <div class="book-content">
+        </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
